@@ -1,0 +1,24 @@
+tags:
+  - name: Upload Data
+get:
+  description: Teks yang akan diproses
+post:
+    summary: Upload a file.
+    operationId: postFile
+    consumes:
+        - multipart/form-data
+    produces:
+        - application/json
+    parameters:
+        - in: formData
+          name: upload # change it to your parameter name
+          required: true
+          type: file
+          description: Stream to write to filesystem
+responses:
+    '200':
+      description: Successful response
+    '400':
+      description: Bad Request
+    '500':
+      description: Internal Server Error
